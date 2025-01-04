@@ -55,5 +55,44 @@ while not at_goal(): # at_goal() is a function that returns True if Reeborg is a
 # Make Reeborg jump over the hurdles. This time, Reebrorg will have to jump over the random placed hurdles until it reaches the finish line
 # Website: https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%203&url=worlds%2Ftutorial_en%2Fhurdle3.json
 
+# First, modify jump() function, remove the first move() function
+def jump(): 
+    turn_left()
+    move()
+    turn_right()
+    move()
+    turn_right()
+    move()
+    turn_left()
+
+while not at_goal():
+    if wall_in_front():
+        jump()
+    else:
+        move()
+
+# Sixth Task
+# Jumping over the hurdles with variable heights
+# Make Reeborg jump over the hurdles with variable heights until it reaches the finish line
+# https://reeborg.ca/reeborg.html?lang=en&mode=python&menu=worlds%2Fmenus%2Freeborg_intro_en.json&name=Hurdle%204&url=worlds%2Ftutorial_en%2Fhurdle4.json
+
+# Modify jump() function, add a while loop to check if there is a wall on the right side of Reeborg
+def jump():
+    turn_left()
+    while wall_on_right():
+        move()
+    turn_right()
+    move()
+    turn_right()
+    
+    while front_is_clear():
+        move()
+    turn_left()
+
+while not at_goal():
+    if wall_in_front():
+        jump()
+    else:
+        move()
 
 
