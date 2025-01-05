@@ -60,6 +60,9 @@ stages = ['''
 ]
 word_list = ["aardvark", "baboon", "camel"]
 
+# STEP 4 - Keep track of the player's guesses.
+# TODO 1 - Create a variable called "lives" to keep track of the number of lives left.
+# Set "lives" to equal 6.
 
 chosen_word = random.choice(word_list)
 print(chosen_word)
@@ -71,12 +74,7 @@ for position in range(word_length):
     placeholder += "_"
 print(placeholder)
 
-# STEP 4 - Keep track of the player's guesses.
-# TODO 1 - Create a variable called "lives" to keep track of the number of lives left.
-# Set "lives" to equal 6.
-
 game_over = False
-lives = 6
 correct_letters = []
 
 while not game_over:
@@ -97,13 +95,6 @@ while not game_over:
     # TODO 2 - If the guess is not a letter in the chosen_word, Then reduce the "lives" by 1.
     # If the lives goes down to 0 then the game should stop and it should print "You lose."
 
-    if guess not in chosen_word:
-        lives -= 1
-        if lives == 0:
-            game_over = True
-            print("You lose!")
-            break
-
     if "_" not in display:
         game_over = True
         print("You win!")
@@ -112,7 +103,6 @@ while not game_over:
   # TODO 3 - Print the ASCII art from 'stages' 
   # that corresponds to the current number of "lives" the user has remaining.
 
-    print(stages[lives])
     
 
 
