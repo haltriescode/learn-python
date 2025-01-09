@@ -46,3 +46,35 @@ def create_enemy():
 
     print(new_enemy)
 
+
+# Modify Global Scope
+
+enemies = "Skeleton"
+
+def increase_enemies():
+ #   global enemies #We have to explicitely define the variable #not recommended
+    enemies = "Zombie"
+    print(f"enemies inside function: {enemies}")
+
+increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+# or we can just call it as return value
+
+enemies = 1
+
+def increase_enemies():
+    print(f"enemies inside function: {enemies}")
+    return enemies + 1
+enemies = increase_enemies()
+print(f"enemies outside function: {enemies}")
+
+
+
+# Python Constants and Global Scope
+
+pi = 3.14159
+GLOBAL_URL = "www.123.com" #You can write variable name on full capital to differenciate it
+
+def my_function():
+    print(GLOBAL_URL)
